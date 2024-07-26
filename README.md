@@ -13,12 +13,14 @@
 Java Development Kit (JDK): Ensure JDK 17 or higher .
 Apache Maven:  Maven 3.6.0 or higher is installed.
 PostgreSQL Database: Ensure PostgreSQL is running.
+ELK docker container
 Update application.properties
 ```
 
 # project running steps
 ```
 navigate to application directory
+docker compose up -d 
 mvn clean package 
 java -jar target/customerservice-1.0-SNAPSHOT.jar
 ```
