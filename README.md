@@ -20,7 +20,7 @@ Update application.properties
 ```
 navigate to application directory
 mvn clean package 
-java -jar target/assignment-spirngbatch-1.0.jar
+java -jar target/customerservice-1.0-SNAPSHOT.jar
 ```
 
 # project testing steps
