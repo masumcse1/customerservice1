@@ -35,9 +35,10 @@ java -jar target/customerservice-1.0-SNAPSHOT.jar
 ```
 
 ```
-        following 2 porints is completed for this assignement.
-1.       Prepare a batch job to
-2.       Prepare RESTFUL API to
-3.       Prepare frond-end screen to 
+       Technology stack 
+1.       Spring boot 3. 
+2.       PostgreSQL
+3.       ELK
+4.       Fly 
 ```
 
