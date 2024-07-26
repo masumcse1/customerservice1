@@ -46,13 +46,13 @@ public class SaleService {
     public List<Object[]> getTopSellingItemsOfAllTime() {
         logger.debug("Fetching top selling items of all time");
         Pageable pageable = PageRequest.of(0, 5);
-        return saleRepository.findTopSellingItemsOfAllTime();
+        return saleRepository.findTopSellingItemsOfAllTime(pageable);
     }
 
     public List<Object[]> getTopSellingItemsOfLastMonth(Date startDate, Date endDate) {
         logger.debug("Fetching top selling items of last month between {} and {}", startDate, endDate);
         Pageable pageable = PageRequest.of(0, 5);
-        return saleRepository.findTopSellingItemsOfLastMonth(startDate, endDate);
+        return saleRepository.findTopSellingItemsOfLastMonth(startDate, endDate,pageable);
     }
 }
 

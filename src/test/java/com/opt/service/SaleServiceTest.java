@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.*;
 
@@ -71,8 +73,8 @@ public class SaleServiceTest {
         topSellingItems.add(maxSaleDayArray);
 
         //List<Object[]> topSellingItems = List.of(new Object[]{"Item1", 1000.0}, new Object[]{"Item2", 800.0});
-
-        when(saleRepository.findTopSellingItemsOfAllTime()).thenReturn(topSellingItems);
+        Pageable pageable = PageRequest.of(0, 5);
+        when(saleRepository.findTopSellingItemsOfAllTime(pageable)).thenReturn(topSellingItems);
 
         List<Object[]> result = saleService.getTopSellingItemsOfAllTime();
         assertEquals(topSellingItems, result);
@@ -88,8 +90,8 @@ public class SaleServiceTest {
         topSellingItemsLastMonth.add(maxSaleDayArray);
 
    //     List<Object[]> topSellingItemsLastMonth = List.of(new Object[]{"Item1", 50}, new Object[]{"Item2", 40});
-
-        when(saleRepository.findTopSellingItemsOfLastMonth(startDate, endDate)).thenReturn(topSellingItemsLastMonth);
+        Pageable pageable = PageRequest.of(0, 5);
+        when(saleRepository.findTopSellingItemsOfLastMonth(startDate, endDate,pageable)).thenReturn(topSellingItemsLastMonth);
 
         List<Object[]> result = saleService.getTopSellingItemsOfLastMonth(startDate, endDate);
         assertEquals(topSellingItemsLastMonth, result);
